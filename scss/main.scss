@@ -1,0 +1,121 @@
+/* Global styles */
+@import url(http://fonts.googleapis.com/css?family=Fjalla+One|Didact+Gothic);
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: 'Didact Gothic', sans-serif;
+	font-size: 20px;
+}
+h1, h2, h3 {
+	font-family: "Fjalla One",sans-serif;
+	text-shadow: 2px 2px 2px #666;
+}
+p, li {
+	font-size: 1.5rem;
+	color: #666;
+}
+ul {
+	margin-bottom: 3rem;
+}
+a {
+	color: #666;
+	text-decoration: underline;
+	&:hover {
+		color: #666;
+		text-decoration: none;
+	}
+}
+
+
+.centred {
+	text-align: center;
+}
+
+/* Navigation styles */
+
+/* Header styles */
+.divider {
+	margin-top: 2rem;
+	border-top: 2px solid #6DB42D;
+	img {
+		position: relative;
+		top: -20px;
+	}
+}
+
+/* Content styles */
+
+.tile {
+	height: 300px;
+	width: 100%;
+	position: relative;
+	font-family: 'Fjalla One', sans-serif;
+	p {
+		font-size: 5rem;
+		text-align: center;
+		padding-top: 5.5rem;
+		color: #FFF;
+		text-shadow: 2px 2px 2px #666;
+	}
+	&.vegan {
+		background: url("../images/strawberries.png") no-repeat;
+	}
+	&.paleo {
+		background: url("../images/cashews.png") no-repeat;
+	}
+	&.raw {
+		background: url("../images/spinach.png") no-repeat;
+	}
+}
+
+.content {
+	padding: 3rem 1rem;
+}
+
+
+/* Footer styles */
+
+footer {
+	background: #6DB42D;
+	margin-top: 2rem;
+	padding: 2rem 0;
+	-webkit-box-shadow: inset 0px 7px 5px -3px rgba(30, 30, 30, 0.4);
+	-moz-box-shadow: inset 0px 7px 5px -3px rgba(30, 30, 30, 0.4);
+	box-shadow: inset 0px 7px 5px -3px rgba(30, 30, 30, 0.4);
+	.col2 {
+		border-left: 2px solid #FFF;
+		padding-left: 1.5rem;
+	}
+	#map-canvas {
+		width: 100%;
+		height: 250px;
+		margin-top: -1rem;
+	}
+	h2, p, li { color: #FFF; }
+	h2 { margin-top: 1.5rem; }
+	ul {
+		list-style: none;
+		margin-left: 0;
+	}
+	a {
+		color: #FFF;
+		&:hover {
+			color: #FFF;
+		}
+	}
+}
+
+
+/* Smaller screen adpations */
+@media only screen and (max-width: 1024px) {
+	footer {
+		.col2 {
+			border-left: none;
+		}
+	}
+}
