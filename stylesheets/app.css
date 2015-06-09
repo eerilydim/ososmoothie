@@ -7928,7 +7928,7 @@ th.hide-for-touch {
     display: none !important;
   }
 }
-/* Global styles */
+/*-------------- Global styles --------------*/
 html {
   position: relative;
   min-height: 100%;
@@ -7943,6 +7943,11 @@ body {
 h1, h2, h3 {
   font-family: "Fjalla One",sans-serif;
   text-shadow: 2px 2px 2px #666;
+}
+
+p {
+  line-height: 2;
+  margin-bottom: 2rem;
 }
 
 p, li {
@@ -7967,8 +7972,136 @@ a:hover {
   text-align: center;
 }
 
-/* Navigation styles */
-/* Header styles */
+/*-------------- Navigation styles --------------*/
+.right-off-canvas-toggle .menu {
+  position: absolute;
+  right: 0;
+  display: block;
+  margin: 2rem;
+  z-index: 100;
+}
+.right-off-canvas-toggle .menu .menu-text:before {
+  content: "menu";
+  color: #eb2090;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+.right-off-canvas-toggle .menu .menu-text-close:before {
+  content: "close";
+  color: #333;
+  padding-left: 3px;
+}
+
+.move-left .exit-off-canvas {
+  box-shadow: none;
+}
+
+.right-off-canvas-menu {
+  width: 29rem;
+}
+
+.move-left > .inner-wrap {
+  transform: translate3d(-29rem, 0, 0);
+}
+
+.right-off-canvas-menu {
+  background: #ECE73D;
+  padding: 3rem 3rem;
+}
+.right-off-canvas-menu a {
+  text-decoration: none;
+}
+.right-off-canvas-menu .side-nav.main li a:not(.button) {
+  font-weight: 100;
+  font-style: normal;
+  font-size: 3rem;
+  color: #000;
+  text-transform: capitalize;
+}
+.right-off-canvas-menu .side-nav.main li a:not(.button) .is-active, .right-off-canvas-menu .side-nav.main li a:not(.button):hover {
+  background: transparent;
+  color: #666;
+}
+.right-off-canvas-menu .side-nav.secondary li a:not(.button) {
+  color: #000;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 1.2rem;
+  padding-bottom: 0rem;
+  text-transform: capitalize;
+}
+.right-off-canvas-menu .side-nav.secondary li a:not(.button) .is-active, .right-off-canvas-menu .side-nav.secondary li a:not(.button):hover {
+  background: transparent;
+  color: #666;
+}
+.right-off-canvas-menu .side-nav li a.is-active {
+  font-weight: bold !important;
+}
+.right-off-canvas-menu .social {
+  padding-top: 4rem;
+}
+.right-off-canvas-menu .social li {
+  margin-left: 1.1rem;
+}
+.right-off-canvas-menu .social i {
+  background: #fff none repeat scroll 0 0;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  color: #eb2090;
+  font-size: 4rem;
+  padding: 0.4rem 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.right-off-canvas-menu .social i:hover {
+  background: #eb2090;
+  color: #FFF;
+  transition: all 0.5s ease;
+}
+
+.top-bar, .middle-bar, .bottom-bar {
+  display: block;
+  width: 40px;
+  height: 10px;
+  background-color: #E50E81;
+  margin-bottom: 4px;
+  transition: transform 0.4s cubic-bezier(1, 0, 0, 1) 0, background-color 0.6s ease 0;
+}
+
+.top-bar, .bottom-bar {
+  transform-origin: 100% 50%;
+}
+
+.middle-bar {
+  transition-property: opacity;
+  transition-duration: 0.6s;
+}
+
+.top-bar-close {
+  transform: rotate(-45deg);
+  background-color: #333;
+}
+
+.middle-bar-close {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+}
+
+.bottom-bar-close {
+  transform: rotate(45deg);
+  background-color: #333;
+}
+
+/*-------------- Header styles --------------*/
+header {
+  margin-top: 2rem;
+  z-index: -1;
+}
+
 .divider {
   margin-top: 2rem;
   border-top: 2px solid #6DB42D;
@@ -7978,39 +8111,50 @@ a:hover {
   top: -20px;
 }
 
-/* Content styles */
-.tile {
+/*-------------- Content styles --------------*/
+.tiles {
+  cursor: default;
+  height: 300px;
+}
+.tiles .tile {
   height: 300px;
   width: 100%;
-  position: relative;
-  font-family: 'Fjalla One', sans-serif;
+  transition: all 0.5s ease;
+  z-index: -1;
+  /*position: absolute;
+  top: 0;*/
 }
-.tile p {
+.tiles .tile.vegan {
+  background: url("../images/strawberries640.jpg") no-repeat;
+}
+.tiles .tile.paleo {
+  background: url("../images/cashews640.jpg") no-repeat;
+}
+.tiles .tile.raw {
+  background: url("../images/spinach640.jpg") no-repeat;
+}
+.tiles .tile p {
+  font-family: 'Fjalla One', sans-serif;
   font-size: 5rem;
   text-align: center;
-  padding-top: 5.5rem;
+  padding-top: 5rem;
   color: #FFF;
   text-shadow: 2px 2px 2px #666;
+  transition: all 0.5s ease;
 }
-.tile.vegan {
-  background: url("../images/strawberries.png") no-repeat;
-}
-.tile.paleo {
-  background: url("../images/cashews.png") no-repeat;
-}
-.tile.raw {
-  background: url("../images/spinach.png") no-repeat;
+.tiles .tile p:hover {
+  transition: all 200ms ease;
+  font-size: 5.2rem;
 }
 
 .content {
   padding: 3rem 1rem;
 }
 
-/* Footer styles */
+/*-------------- Footer styles --------------*/
 footer {
   background: #6DB42D;
-  margin-top: 2rem;
-  padding: 2rem 0;
+  padding: 3rem 0 5rem;
   -webkit-box-shadow: inset 0px 7px 5px -3px rgba(30, 30, 30, 0.4);
   -moz-box-shadow: inset 0px 7px 5px -3px rgba(30, 30, 30, 0.4);
   box-shadow: inset 0px 7px 5px -3px rgba(30, 30, 30, 0.4);
@@ -8041,9 +8185,29 @@ footer a:hover {
   color: #FFF;
 }
 
-/* Smaller screen adpations */
+/*-------------- Mobile --------------*/
 @media only screen and (max-width: 1024px) {
   footer .col2 {
     border-left: none;
+  }
+}
+@media only screen and (max-width: 760px) {
+  .tiles .tile p {
+    font-size: 4rem;
+    padding-top: 6rem;
+    transition: all 200ms ease;
+  }
+  .tiles .tile p:hover {
+    transition: all 200ms ease;
+    font-size: 4.1rem;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .tiles .tile {
+    height: 100px;
+  }
+  .tiles .tile p {
+    padding-top: 0;
+    margin-top: 5px;
   }
 }

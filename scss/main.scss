@@ -1,4 +1,4 @@
-/* Global styles */
+/*-------------- Global styles --------------*/
 @import url(http://fonts.googleapis.com/css?family=Fjalla+One|Didact+Gothic);
 
 html {
@@ -11,17 +11,26 @@ body {
 	font-family: 'Didact Gothic', sans-serif;
 	font-size: 20px;
 }
+
 h1, h2, h3 {
 	font-family: "Fjalla One",sans-serif;
 	text-shadow: 2px 2px 2px #666;
 }
+
+p {
+	line-height: 2;
+	margin-bottom: 2rem;
+}
+
 p, li {
 	font-size: 1.5rem;
 	color: #666;
 }
+
 ul {
 	margin-bottom: 3rem;
 }
+
 a {
 	color: #666;
 	text-decoration: underline;
@@ -31,14 +40,142 @@ a {
 	}
 }
 
-
 .centred {
 	text-align: center;
 }
 
-/* Navigation styles */
+/*-------------- Navigation styles --------------*/
+.right-off-canvas-toggle {
+	.menu {
+		position: absolute;
+		right: 0;
+		display: block;
+		margin: 2rem;
+		z-index: 100;
+		.menu-text:before {
+			content: "menu";
+			color: #eb2090;
+			font-size: 0.9rem;
+			font-weight: bold;
+			margin-bottom: 0;
+			text-transform: uppercase;
+		}
+		.menu-text-close:before {
+			content: "close";
+			color: #333;
+			padding-left: 3px;
+		}
+	}
+}
 
-/* Header styles */
+.move-left .exit-off-canvas {
+	box-shadow: none;
+}
+
+.right-off-canvas-menu {
+	width: 29rem;
+}
+
+.move-left > .inner-wrap {
+	transform: translate3d(-29rem, 0, 0);
+}
+
+.right-off-canvas-menu {
+	background: #ECE73D;
+	padding: 3rem 3rem;
+	a {
+		text-decoration: none;
+	}
+	.side-nav.main li a:not(.button) {
+		font-weight: 100;
+		font-style: normal;
+		font-size: 3rem;
+		color: #000;
+		text-transform: capitalize;
+		.is-active, &:hover {
+			background: transparent;
+			color: #666;
+		}
+	}
+	.side-nav.secondary li a:not(.button) {
+		color: #000;
+		font-weight: 200;
+		font-style: normal;
+		font-size: 1.2rem;
+		padding-bottom: 0rem;
+		text-transform: capitalize;
+		.is-active, &:hover {
+			background: transparent;
+			color: #666;
+		}
+	}
+	.side-nav li a.is-active {
+		font-weight: bold !important;
+	}
+	.social {
+		padding-top: 4rem;
+		li {
+			margin-left: 1.1rem;
+		}
+		i {
+			background: #fff none repeat scroll 0 0;
+			border: 3px solid #fff;
+			border-radius: 50%;
+			color: #eb2090;
+			font-size: 4rem;
+			padding: 0.4rem 1.5rem;
+			border-radius: 50%;
+			cursor: pointer;
+			transition: all 0.5s ease;
+			&:hover {
+				background: #eb2090;
+				color: #FFF;
+				transition: all 0.5s ease;
+			}
+		}
+	}
+}
+
+.top-bar, .middle-bar, .bottom-bar {
+	display: block;
+	width: 40px;
+	height: 10px;
+	background-color: #E50E81;
+	margin-bottom: 4px;
+	transition: transform 0.4s cubic-bezier(1, 0, 0, 1) 0, background-color 0.6s ease 0;
+}
+
+.top-bar, .bottom-bar {
+	transform-origin: 100% 50%;
+}
+
+.middle-bar {
+	transition-property: opacity;
+	transition-duration: 0.6s;
+}
+
+.top-bar-close {
+	transform: rotate(-45deg);
+	background-color: #333;
+}
+
+.middle-bar-close {
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.3s;
+}
+
+.bottom-bar-close {
+	transform: rotate(45deg);
+	background-color: #333;
+}
+
+/*-------------- Header styles --------------*/
+header {
+	margin-top: 2rem;
+	z-index: -1;
+}
+
 .divider {
 	margin-top: 2rem;
 	border-top: 2px solid #6DB42D;
@@ -48,28 +185,39 @@ a {
 	}
 }
 
-/* Content styles */
-
-.tile {
+/*-------------- Content styles --------------*/
+.tiles {
+	cursor: default;
 	height: 300px;
-	width: 100%;
-	position: relative;
-	font-family: 'Fjalla One', sans-serif;
-	p {
-		font-size: 5rem;
-		text-align: center;
-		padding-top: 5.5rem;
-		color: #FFF;
-		text-shadow: 2px 2px 2px #666;
-	}
-	&.vegan {
-		background: url("../images/strawberries.png") no-repeat;
-	}
-	&.paleo {
-		background: url("../images/cashews.png") no-repeat;
-	}
-	&.raw {
-		background: url("../images/spinach.png") no-repeat;
+	.tile {
+		height: 300px;
+		width: 100%;
+		transition: all 0.5s ease;
+		z-index: -1;
+		/*position: absolute;
+		top: 0;*/
+		&.vegan {
+			background: url("../images/strawberries640.jpg") no-repeat;
+		}
+		&.paleo {
+			background: url("../images/cashews640.jpg") no-repeat;
+		}
+		&.raw {
+			background: url("../images/spinach640.jpg") no-repeat;
+		}
+		p {
+			font-family: 'Fjalla One', sans-serif;
+			font-size: 5rem;
+			text-align: center;
+			padding-top: 5rem;
+			color: #FFF;
+			text-shadow: 2px 2px 2px #666;
+			transition: all 0.5s ease;
+			&:hover {
+				transition: all 200ms ease;
+				font-size: 5.2rem;
+			}
+		}
 	}
 }
 
@@ -77,13 +225,11 @@ a {
 	padding: 3rem 1rem;
 }
 
-
-/* Footer styles */
+/*-------------- Footer styles --------------*/
 
 footer {
 	background: #6DB42D;
-	margin-top: 2rem;
-	padding: 2rem 0;
+	padding: 3rem 0 5rem;
 	-webkit-box-shadow: inset 0px 7px 5px -3px rgba(30, 30, 30, 0.4);
 	-moz-box-shadow: inset 0px 7px 5px -3px rgba(30, 30, 30, 0.4);
 	box-shadow: inset 0px 7px 5px -3px rgba(30, 30, 30, 0.4);
@@ -96,8 +242,12 @@ footer {
 		height: 250px;
 		margin-top: -1rem;
 	}
-	h2, p, li { color: #FFF; }
-	h2 { margin-top: 1.5rem; }
+	h2, p, li {
+		color: #FFF;
+	}
+	h2 {
+		margin-top: 1.5rem;
+	}
 	ul {
 		list-style: none;
 		margin-left: 0;
@@ -110,12 +260,33 @@ footer {
 	}
 }
 
-
-/* Smaller screen adpations */
+/*-------------- Mobile --------------*/
 @media only screen and (max-width: 1024px) {
 	footer {
 		.col2 {
 			border-left: none;
+		}
+	}
+}
+
+@media only screen and (max-width: 760px) {
+	.tiles .tile p {
+		font-size: 4rem;
+		padding-top: 6rem;
+		transition: all 200ms ease;
+		&:hover {
+			transition: all 200ms ease;
+			font-size: 4.1rem;
+		}
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	.tiles .tile {
+		height: 100px;
+		p {
+			padding-top: 0;
+			margin-top: 5px;
 		}
 	}
 }
