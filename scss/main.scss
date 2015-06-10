@@ -83,6 +83,7 @@ a {
 .right-off-canvas-menu {
 	background: #ECE73D;
 	padding: 3rem 3rem;
+	z-index: -1;
 	a {
 		text-decoration: none;
 	}
@@ -194,8 +195,6 @@ header {
 		width: 100%;
 		transition: all 0.5s ease;
 		z-index: -1;
-		/*position: absolute;
-		top: 0;*/
 		&.vegan {
 			background: url("../images/strawberries640.jpg") no-repeat;
 		}
@@ -287,6 +286,52 @@ footer {
 		p {
 			padding-top: 0;
 			margin-top: 5px;
+		}
+	}
+}
+
+@media only screen and (max-width: 580px) {
+	.right-off-canvas-toggle {
+		.menu {
+			margin: 0 0.7rem;
+			.menu-text:before {
+				font-size: 0.7rem;
+			}
+			.top-bar, .middle-bar, .bottom-bar {
+				width: 30px;
+				height: 5px;
+				margin-bottom: 0.35rem;
+			}
+		}
+	}
+	.right-off-canvas-menu {
+		width: 80%;
+		padding: 1rem;
+		.side-nav.main li a:not(.button) {
+			font-size: 2rem;
+		}
+		.social {
+			padding-top: 2rem;
+			li {
+				margin-left: 0.7rem;
+			}
+			i {
+				font-size: 2.5rem;
+				padding: 0.1rem 0.8rem;
+			}
+		}
+	}
+	.move-left > .inner-wrap {
+		transform: translate3d(-80%, 0, 0);
+	}
+	
+	main {
+		margin-top: -2.5rem;
+		.tiles .tile {
+			height: 5rem;
+			p {
+				font-size: 3rem;
+			}
 		}
 	}
 }
